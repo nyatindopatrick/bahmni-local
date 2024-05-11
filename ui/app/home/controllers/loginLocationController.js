@@ -149,10 +149,11 @@ angular.module('bahmni.home')
                     $scope.locations = _.filter(initialData.locations, function (location) {
                         return location.display.toLowerCase().includes(value.toLowerCase());
                     });
+                    $scope.showLocationList = true;
                 } else {
-                    $scope.locations = initialData.locations;
+                    $scope.locations = [];
+                    $scope.showLocationList = false;
                 }
-                $scope.showLocationList = true;
             };
 
             $window.onclick = function (event) {
