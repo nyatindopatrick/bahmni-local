@@ -17,8 +17,8 @@
         <div class="field-value location-select">
           <input list="locationOptions" id="location" name="location" ng-model="loginInfo.locationSearch" ng-change="search()" autocomplete="off" required />
 
-          <div class="location-list" ng-show="showLocationList">
-            <input class="location-option" type="button" ng-model="loginInfo.currentLocation" ng-repeat="item in locations | orderBy:'display'" ng-value="item.display"
+          <div class="location-list ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" ng-show="showLocationList">
+            <input class="location-option ui-menu-item" type="button" ng-model="loginInfo.currentLocation" ng-repeat="item in locations | orderBy:'display'" ng-value="item.display"
                 ng-click="selectLocation(item)"
             >
               {{ item.display | translate }}

@@ -794,13 +794,12 @@ button.button-Errorlog {
   z-index: 100;
   .location-list {
     position: absolute;
-    border: 1px solid $lightGray;
+    top: 100%;
   }
   .location-option {
     border-radius: 0px;
     padding: 5px 10px;
     cursor: pointer;
-    background: white;
     width: 100%;
     margin: 0px;
     border: none;

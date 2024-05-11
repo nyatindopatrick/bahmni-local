@@ -156,8 +156,10 @@ angular.module('bahmni.home')
             };
 
             $window.onclick = function (event) {
-                $scope.showLocationList = false;
-                $scope.$apply();
+                if (event.target.id !== "location") {
+                    $scope.showLocationList = false;
+                    $scope.$apply();
+                }
             };
 
             $scope.selectLocation = function (item) {
