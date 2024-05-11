@@ -142,4 +142,27 @@ angular.module('bahmni.home')
                     }
                 );
             };
+
+            $scope.search = function () {
+                const value = $scope.loginInfo.locationSearch;
+                if (value) {
+                    $scope.locations = _.filter(initialData.locations, function (location) {
+                        return location.display.toLowerCase().includes(value.toLowerCase());
+                    });
+                } else {
+                    $scope.locations = initialData.locations;
+                }
+                $scope.showLocationList = true;
+            };
+
+            $window.onclick = function (event) {
+                $scope.showLocationList = false;
+                $scope.$apply();
+            };
+
+            $scope.selectLocation = function (item) {
+                $scope.loginInfo.currentLocation = item;
+                $scope.loginInfo.locationSearch = item.display;
+                $scope.showLocationList = false;
+            };
         }]);
